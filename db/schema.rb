@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_154830) do
+ActiveRecord::Schema.define(version: 2021_04_29_170015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,31 @@ ActiveRecord::Schema.define(version: 2021_04_29_154830) do
     t.index ["zone_id"], name: "index_countries_on_zone_id"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.bigint "zone_id", null: false
+    t.bigint "country_id", null: false
+    t.bigint "region_id", null: false
+    t.bigint "type_id", null: false
+    t.bigint "category_id", null: false
+    t.string "name"
+    t.decimal "lat"
+    t.decimal "lng"
+    t.integer "mindepth"
+    t.integer "maxdepth"
+    t.string "visibility"
+    t.string "currents"
+    t.boolean "is_spec"
+    t.string "image"
+    t.text "desc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_locations_on_category_id"
+    t.index ["country_id"], name: "index_locations_on_country_id"
+    t.index ["region_id"], name: "index_locations_on_region_id"
+    t.index ["type_id"], name: "index_locations_on_type_id"
+    t.index ["zone_id"], name: "index_locations_on_zone_id"
+  end
+
   create_table "regions", force: :cascade do |t|
     t.bigint "zone_id", null: false
     t.bigint "country_id", null: false
@@ -140,6 +165,11 @@ ActiveRecord::Schema.define(version: 2021_04_29_154830) do
   add_foreign_key "centers", "regions"
   add_foreign_key "centers", "zones"
   add_foreign_key "countries", "zones"
+  add_foreign_key "locations", "categories"
+  add_foreign_key "locations", "countries"
+  add_foreign_key "locations", "regions"
+  add_foreign_key "locations", "types"
+  add_foreign_key "locations", "zones"
   add_foreign_key "regions", "countries"
   add_foreign_key "regions", "zones"
 end

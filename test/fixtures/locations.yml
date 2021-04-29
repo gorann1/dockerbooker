@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  zone: one
+  country: one
+  region: one
+  type: one
+  category: one
+  name: MyString
+  lat: 9.99
+  lng: 9.99
+  mindepth: 1
+  maxdepth: 1
+  visibility: MyString
+  is_spec: false
+  currents: MyString
+  image: MyString
+  desc: MyText
+
+two:
+  zone: two
+  country: two
+  region: two
+  type: two
+  category: two
+  name: MyString
+  lat: 9.99
+  lng: 9.99
+  mindepth: 1
+  maxdepth: 1
+  visibility: MyString
+  is_spec: false
+  currents: MyString
+  image: MyString
+  desc: MyText

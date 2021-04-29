@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get "onama", to: "pages#about"
   get "uvjeti", to: "pages#terms"
 
+  resources :locations
+  get 'locations', to: 'locations#index'
+  #get '/locations/:id', to: 'locations#show'
+
+
   scope controller: :pages do
     get :up
   end

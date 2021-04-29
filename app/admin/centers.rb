@@ -15,6 +15,24 @@ ActiveAdmin.register Center do
   #   permitted
   # end
 
+  index do
+    id_column
+    column :Name do |center|
+      truncate(center.name, length: 50)
+    end
+    column :Contact do |center|
+      truncate(center.desc, length: 50)
+    end
+    column :City do |center|
+      truncate(center.city, length: 50)
+    end
+    column :Email do |center|
+      truncate(center.city, length: 50)
+    end
+    actions
+  end
+
+
   permit_params :zone_id, :country_id, :region_id, :name, :address, :add_address, :city, :contact, :phone, :add_phone, :postalcode, :mobile, :add_mobile, :email, :add_email, :web, :add_web, :desc
 
 
