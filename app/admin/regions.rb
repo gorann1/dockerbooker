@@ -15,5 +15,5 @@ ActiveAdmin.register Region do
   #   permitted
   # end
 
-  permit_params :country_id, :name, :desc
+  permit_params :zone_id, :country_id, :name, :desc
 end

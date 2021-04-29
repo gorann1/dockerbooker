@@ -93,12 +93,14 @@ ActiveRecord::Schema.define(version: 2021_04_29_154830) do
   end
 
   create_table "regions", force: :cascade do |t|
+    t.bigint "zone_id", null: false
     t.bigint "country_id", null: false
     t.string "name"
     t.text "desc"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["country_id"], name: "index_regions_on_country_id"
+    t.index ["zone_id"], name: "index_regions_on_zone_id"
   end
 
   create_table "types", force: :cascade do |t|
@@ -139,4 +141,5 @@ ActiveRecord::Schema.define(version: 2021_04_29_154830) do
   add_foreign_key "centers", "zones"
   add_foreign_key "countries", "zones"
   add_foreign_key "regions", "countries"
+  add_foreign_key "regions", "zones"
 end
