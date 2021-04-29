@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  ActiveAdmin.routes(self)
   devise_for :users, path: "", path_names: { sign_in: "login", sign_out: "logout", sign_up: "register" }
   #root to: 'pages#home'
   root to: 'welcome#index'
