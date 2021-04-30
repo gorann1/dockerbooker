@@ -24,10 +24,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 # Execute jobs in the background. Read more: https://github.com/mperham/sidekiq
 gem 'sidekiq', '~> 6.1.2'
-  gem 'devise'
-  gem 'activeadmin'
-  gem 'carrierwave', '~> 2.0'
-  gem 'mini_magick', '~> 4.11'
+gem 'devise'
+gem 'activeadmin'
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick', '~> 4.11'
+gem 'ransack', '~> 2.4', '>= 2.4.2'
   
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

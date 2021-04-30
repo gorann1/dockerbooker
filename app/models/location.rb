@@ -5,5 +5,5 @@ class Location < ApplicationRecord
   belongs_to :type
   belongs_to :category
 
-
+  mount_uploader :image, ImageUploader
 end

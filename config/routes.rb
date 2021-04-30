@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'locations', to: 'locations#index'
   #get '/locations/:id', to: 'locations#show'
 
+  get '/search', to: 'locations#search'
 
   scope controller: :pages do
     get :up
