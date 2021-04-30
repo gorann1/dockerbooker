@@ -23,17 +23,18 @@ ActiveAdmin.register Location do
     column :Desc do |location|
       truncate(location.desc, length: 50)
     end
+
     actions
   end
 
 
-  permit_params :zone_id, :country_id, :region_id, :type_id, :category_id, :name, :lat, :lng, :mindepth, :maxdepth, :visibility, :currents, :is_spec, :image, :desc
+  permit_params :zone_id, :country_id, :region_id, :type_id, :category_id, :name, :lat, :lng, :mindepth, :maxdepth, :visibility, :currents, :is_spec, :master_image, :desc
 
   form do |f| #This is formtastic form builder
   f.semantic_errors # shows errors on :base
   f.inputs          # builds an input field for every attribute
   f.inputs do
-    f.input :image, as: :file
+    f.input :master_image, as: :file
     f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
   end
