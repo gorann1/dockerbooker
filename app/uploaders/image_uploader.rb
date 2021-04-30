@@ -24,9 +24,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
-   def scale(width, height)
+  # def scale(width, height)
   #   # do something
-  end
+  #end
 
   #version :resize do
   # returns an image with a maximum width of 100px
@@ -34,13 +34,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   # 10000 is used to tell CW that the height is free
   # and so that it will hit the 100 px width first
   #end
+  process resize_to_fit: [320, 192]
   #process resize_to_fit: [412, 200]
   #process resize_and_crop: 412
 
   # Create different versions of your uploaded files:
-  #version :thumb do
-  #process resize_to_fit: [50, 50]
-  #end
+  version :thumb do
+  process resize_to_fit: [50, 50]
+  end
 
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
