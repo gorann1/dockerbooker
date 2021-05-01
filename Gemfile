@@ -29,7 +29,7 @@ gem 'activeadmin'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick', '~> 4.11'
 gem 'ransack', '~> 2.4', '>= 2.4.2'
-gem 'react_on_rails', '11.1.4'
+gem 'react_on_rails', '11.2.1'
 
 
 
@@ -60,3 +60,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'mini_racer', platforms: :ruby
