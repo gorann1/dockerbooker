@@ -7,6 +7,8 @@ default: &default
   public_output_path: "packs"
   cache_path: "tmp/cache/webpacker"
   webpack_compile_output: true
+  hmr: true
+  inline: false
   # Compilation is disabled because we're running a separate webpack watcher
   # in development which is watching our files
   compile: false
@@ -53,6 +55,7 @@ default: &default
 
 development:
   <<: *default
+
 
 test:
   <<: *default
