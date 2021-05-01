@@ -29,7 +29,10 @@ gem 'activeadmin'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick', '~> 4.11'
 gem 'ransack', '~> 2.4', '>= 2.4.2'
-  
+gem 'react_on_rails', '11.1.4'
+
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
