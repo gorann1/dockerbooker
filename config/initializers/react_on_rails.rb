@@ -8,7 +8,6 @@ ReactOnRails.configure do |config|
   # if you don't want react_on_rails building this file for you.
   config.build_production_command = "RAILS_ENV=production NODE_ENV=production bin/webpack"
 
-  config.same_bundle_for_client_and_server = true
   ################################################################################
   ################################################################################
   # TEST CONFIGURATION OPTIONS
