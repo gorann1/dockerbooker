@@ -30,8 +30,11 @@ gem 'carrierwave', '~> 2.0'
 gem 'mini_magick', '~> 4.11'
 gem 'ransack', '~> 2.4', '>= 2.4.2'
 gem 'react_on_rails', '11.2.1'
-
-
+gem 'active_material'
+gem 'gmaps4rails'
+gem 'will_paginate', '~> 3.3.0'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: {
     enabled: ["production"].includes(process.env.NODE_ENV),
@@ -5,6 +7,21 @@ module.exports = {
       "./**/*.html.erb",
       "./app/helpers/**/*.rb",
       "./app/javascript/**/*.js",
-    ]
+    ],
+    theme: {
+      colors: {
+        black: colors.black,
+        white: colors.white,
+        gray: colors.trueGray,
+        indigo: colors.indigo,
+        red: colors.rose,
+        yellow: colors.amber,
+      },
+      extend: {},
+    },
+    variants: {
+      extend: {},
+    },
+    plugins: [],
   }
 };

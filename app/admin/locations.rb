@@ -28,7 +28,7 @@ ActiveAdmin.register Location do
   end
 
 
-  permit_params :zone_id, :country_id, :region_id, :type_id, :category_id, :name, :lat, :lng, :mindepth, :maxdepth, :visibility, :currents, :is_spec, :master_image, :desc
+  permit_params :zone_id, :country_id, :region_id, :type_id, :category_id, :name, :lat, :lng, :gps, :mindepth, :maxdepth, :visibility, :currents, :is_spec, :master_image, :desc
 
   form do |f| #This is formtastic form builder
   f.semantic_errors # shows errors on :base

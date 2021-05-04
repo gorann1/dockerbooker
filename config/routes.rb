@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get '/search', to: 'locations#search'
 
+  resources :centers
+  get 'centers', to: 'centers#index'
   scope controller: :pages do
     get :up
   end
