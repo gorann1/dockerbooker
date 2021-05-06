@@ -9,6 +9,14 @@
   <%= f.submit class: 'btn btn-primary' %>
 
   <div>
+    <%= f.label :zona %>
+    <%= f.text_field :zone_name_cont, class: 'bg-purple-white shadow rounded border-0 p-3' %>
+  </div>
+    <div>
+    <%= f.label :država %>
+    <%= f.text_field :country_name_cont, class: 'bg-purple-white shadow rounded border-0 p-3' %>
+  </div>
+  <div>
     <%= f.label :regija %>
     <%= f.text_field :region_name_cont, class: 'bg-purple-white shadow rounded border-0 p-3' %>
   </div>
