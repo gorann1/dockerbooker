@@ -1,8 +1,9 @@
 class LocationsController < ApplicationController
   layout @locations
     def index
-      @search = Location.ransack(params[:q])
-      @locations = @search.result.paginate(page: params[:page], per_page: 9)
+      @q = Location.ransack(params[:q])
+      @locations = @q.result.includes(:category)
+      @locations = @q.result.paginate(page: params[:page], per_page: 9)
 
         @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
           marker.lat location.lat

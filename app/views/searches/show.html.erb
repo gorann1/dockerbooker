@@ -1,0 +1,30 @@
+<h1>Search Results</h1>
+<p><%= link_to "Back", new_search_path %></p>
+
+<% if @search.search_location.empty? %>
+  <p>No Pokemon were found.</p>
+<% else %>
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Region</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @search.search_location.each do |location| %>
+      <tr>
+        <td><%= location.name %></td>
+        <td><%= location.type %></td>
+        <td><%= location.region %></td>
+        <td><%= link_to 'Show', location %></td>
+        <td><%= link_to 'Edit', edit_location_path(location) %></td>
+        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

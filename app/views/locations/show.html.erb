@@ -1,20 +1,137 @@
-<div id="map" class="w-full h-full max-w-2xl rounded"></div>
-<div class="bg-white">
-  <div class="container px-6 py-10 mx-auto md:py-16">
-    <div class="flex flex-col space-y-6 md:flex-row md:items-center md:space-x-6">
-      <div class="w-full md:w-1/2">
-        <div class="max-w-lg">
-          <h1 class="text-2xl font-medium tracking-wide text-gray-800 md:text-4xl">
-            <%= @location.name %>
-          </h1>
-          <p class="mt-2 text-gray-600">
-            <%= @location.desc %>
-          </p>
+<!--<div class="min-h-screen flex items-center justify-center">
+  <div class="flex flex-col bg-white rounded p-4 w-full max-w-xs">
+    <div class="font-bold text-xl">Sydney</div>
+    <div class="text-sm text-gray-500">Thursday 10 May 2020</div>
+    <div class="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-24 w-24">
+      <svg class="w-32 h-32" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+    </div>
+    <div class="flex flex-row items-center justify-center mt-6">
+      <div class="font-medium text-6xl">24°</div>
+      <div class="flex flex-col items-center ml-6">
+        <div>Cloudy</div>
+        <div class="mt-1">
+          <span class="text-sm"><i class="far fa-long-arrow-up"></i></span>
+          <span class="text-sm font-light text-gray-500">28°C</span>
+        </div>
+        <div>
+          <span class="text-sm"><i class="far fa-long-arrow-down"></i></span>
+          <span class="text-sm font-light text-gray-500">20°C</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row justify-between mt-6">
+      <div class="flex flex-col items-center">
+        <div class="font-medium text-sm">Wind</div>
+        <div class="text-sm text-gray-500">9k/h</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="font-medium text-sm">Humidity</div>
+        <div class="text-sm text-gray-500">68%</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="font-medium text-sm">Visibility</div>
+        <div class="text-sm text-gray-500">10km</div>
+      </div>
+    </div>
+  </div>
+</div>-->
+<div class="p-4 w-full items-center bg-gray-300">
+  <div class="grid grid-cols-12 gap-4">
+    <div class="col-span-12 sm:col-span-6 md:col-span-3">
+      <div class="flex flex-row bg-white shadow-sm rounded p-4">
+        <div class="text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-16 w-16">
+          <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+        </div>
+        <div class="flex flex-col flex-grow ml-4">
+          <div class="text-sm text-gray-500"><%= Time.now.strftime("%d/%m/%Y") %></div>
+          <div class="font-bold text-xl">Zadar</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-span-12 sm:col-span-6 md:col-span-3">
+      <div class="flex flex-row bg-white shadow-sm rounded p-4">
+        <div class="flex flex-row items-center justify-center mt-6">
+          <div class="font-medium text-6xl">24°</div>
+          <div class="flex flex-col items-center ml-6">
+            <div>Cloudy</div>
+            <div class="mt-1">
+              <span class="text-sm"><i class="far fa-long-arrow-up"></i></span>
+              <span class="text-sm font-light text-gray-500">28°C</span>
+            </div>
+            <div>
+              <span class="text-sm"><i class="far fa-long-arrow-down"></i></span>
+              <span class="text-sm font-light text-gray-500">20°C</span>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-span-12 sm:col-span-6 md:col-span-3">
+      <div class="flex flex-row bg-white shadow-sm rounded p-4">
+        <div class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-orange-100 text-orange-500">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+        </div>
+        <div class="flex flex-col flex-grow ml-4">
+          <div class="text-sm text-gray-500">New Clients</div>
+          <div class="font-bold text-lg">190</div>
+        </div>
       </div>
     </div>
+    <div class="col-span-12 sm:col-span-6 md:col-span-3">
+      <div class="flex flex-row bg-white shadow-sm rounded p-4">
+        <div class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-red-100 text-red-500">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <div class="flex flex-col flex-grow ml-4">
+          <div class="text-sm text-gray-500">Revenue</div>
+          <div class="font-bold text-lg">$ 32k</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex min-h-screen bg-white">
+  <div class="md:w-1/2 max-w-lg mx-auto my-2 px-4 py-5 shadow-none">
+    <h1 class="text-6xl font-bold mt-4"><%= @location.name  %></h1>
+    <!-- country region island -->
+    <div class="flex mt-16 font-light text-gray-500">
+      <div class="pr-4">
+        <span class="uppercase">Zona</span>
+        <p class="text-2xl text-gray-900 font-semibold pt-2"><%= @location.zone.name %></p>
+      </div>
+      <div class="pr-4">
+        <span class="uppercase">Zemlja</span>
+        <p class="text-2xl text-gray-900 font-semibold pt-2"><%= @location.country.name %></p>
+      </div>
+      <div class="pr-4">
+        <span class="uppercase">Regija</span>
+        <p class="text-2xl text-gray-900 font-semibold pt-2"><%= @location.region.name %></p>
+      </div>
+      <div class="pr-4">
+        <span class="uppercase">Tip</span>
+        <p class="text-2xl text-gray-900 font-semibold pt-2"><%= @location.type.name %></p>
+      </div>
+      <div class="pr-4">
+        <span class="uppercase">Kategorija</span>
+        <p class="text-2xl text-gray-900 font-semibold pt-2"><%= @location.category.name %></p>
+      </div>
+    </div>
+    <%= image_tag @location.master_image, class: "h-72 w-full rounded-lg shadow-md bg-cover mt-8 bg-center" %>
+    <div class="description w-full mt-8 text-gray-500 text-sm"><%= @location.desc %></div>
+<!--    <div class="flex justify-center pb-3 text-grey-dark">
+      <div class="text-center mr-3 border-r pr-3">
+        <h2><%#=@location.maxdepth %></h2>
+        <span>Dubina</span>
+      </div>
+      <div class="text-center">
+        <h2>42</h2>
+        <span>Friends</span>
+      </div>
+    </div>-->
+  </div>
+
+  <div id="map" class="md:w-1/2"></div>
+</div>
 <script type="text/javascript">
     handler = Gmaps.build('Google');
     handler.buildMap({

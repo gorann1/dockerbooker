@@ -1,29 +1,66 @@
-<% @centers.each do |center| %>
-<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-5">
-  <!--Card 1-->
-    <div class=" w-full lg:max-w-full lg:flex">
-      <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('https://via.placeholder.com/192x234')" title="Mountain">
+<div class="container px-6 py-10 mx-auto">
+  <%= search_form_for @q do |f| %>
+    <%= f.search_field :name_cont, class:"border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm", focus:"outline-none",
+                       type:"search", placeholder:"Search" %>
+  <div class="grid gap-8 mt-6 sm:grid-cols-2 md:grid-cols-4">
+    <%= f.collection_select :zone_id_eq, Zone.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", include_blank: true %>
+    <%= f.collection_select :country_id_eq, Country.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", include_blank: true %>
+    <button
+      class="px-4 py-2 font-medium tracking-wide text-white capitalize bg-blue-600 rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+      Search
+    </button>
+  </div>
+    <%= link_to "Reset", request.path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+
+    </div>
+  <% end %>
+<div>
+  <section class=" text-gray-200 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-5 py-24 ">
+      <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+        <h1 class=" title-font mb-2 text-4xl font-extrabold leading-10 tracking-tight text-left sm:text-5xl sm:leading-none md:text-6xl"> DERNIER COURS</h1>
+        <p class="lg:w-1/2 w-full leading-relaxed text-base">
+          Enseigner c'est apprendre deux fois. J'aime partager mes connaissances et mes découvertses.
+        </p>
       </div>
-      <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-        <div class="mb-8">
-          <p class="text-sm text-gray-600 flex items-center">
-            <%= center.region.name %>
-          <p class="text-gray-600"><%=center.city %></p>
-          </p>
-          <div class="text-gray-900 font-bold text-xl mb-2"><%= center.name %></div>
-          <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-        </div>
-        <div class="flex items-center">
-          <img class="w-10 h-10 rounded-full mr-4" src="/ben.png" alt="Kontakt">
-          <div class="text-sm">
-            <p class="text-gray-900 leading-none"><%= center.contact %></p>
+    <div class="flex flex-wrap -m-4">
+      <% @centers.each do |center| %>
+    <div class="xl:w-1/3 md:w-1/2 p-4">
+          <div class="border border-gray-300 p-6 rounded-lg">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+              <svg class=" fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/></svg>
+            </div>
+            <p class="text-sm text-gray-400 flex items-center uppercase">
+              <%= center.region.name %>
+            </p>
+            <h2 class="text-lg  font-medium title-font mb-2"><%= center.name %></h2>
+            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
+<!--            <div class="text-sm">-->
+<!--              <p class="text-blue-200 leading-none"><%#= center.contact %></p>-->
+<!--            </div>-->
+            <p class="text-green-200"><%=center.city %></p>
+            <p class="text-pink-400"><%=center.address %></p>
+            <div class="text-center mt-2 leading-none flex justify-between w-full">
+                <span class=" mr-3 inline-flex items-center leading-none text-sm  py-1 ">
+                  <svg class=" fill-current w-4 h-4 mr-2 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>
+                  40 min
+                </span>
+              <span class=" inline-flex items-center leading-none text-sm">
+                  <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                    <path fill="#D8D8D8" d="M9.2 6.583v11.08h3.5V6.583zm6.4 11.084h3.5V3h-3.5z"/>
+                    <path fill="#667EEA" d="M2.6 17.667h3.5v-7.334H2.6z"/></g></svg>
+                    Rating
+                </span>
+            </div>
           </div>
         </div>
-      </div>
+        <%end %>
     </div>
-  <div class="flex h-8 font-medium ">
-  </div>
+    </div>
+  </section>
 </div>
   <%= will_paginate @centers %>
 
-<%end %>
+
+
