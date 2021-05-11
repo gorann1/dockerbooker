@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users, path: "", path_names: { sign_in: "login", sign_out: "logout", sign_up: "register" }
   #root to: 'pages#home'
-  root to: 'welcome#index'
+  #root to: 'welcome#index'
   get "onama", to: "pages#about"
   get "uvjeti", to: "pages#terms"
 
@@ -18,6 +18,17 @@ Rails.application.routes.draw do
   scope controller: :pages do
     get :up
   end
+
+  devise_scope :user do
+    authenticated :user do
+      root 'welcome#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+
 
   # Sidekiq has a web dashboard which you can enable below. It's turned off by
   # default because you very likely wouldn't want this to be available to

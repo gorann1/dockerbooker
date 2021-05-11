@@ -97,23 +97,23 @@
     <div class="flex mt-16 font-light text-gray-500">
       <div class="pr-4">
         <span class="uppercase">Zona</span>
-        <p class="text-2xl text-gray-900 font-semibold pt-2"><%= @location.zone.name %></p>
+        <p class="text-lg text-gray-900 font-semibold pt-2"><%= @location.zone.name %></p>
       </div>
       <div class="pr-4">
         <span class="uppercase">Zemlja</span>
-        <p class="text-2xl text-gray-900 font-semibold pt-2"><%= @location.country.name %></p>
+        <p class="text-lg text-gray-900 font-semibold pt-2 capitalize;"><%= @location.country.nicename %></p>
       </div>
       <div class="pr-4">
         <span class="uppercase">Regija</span>
-        <p class="text-2xl text-gray-900 font-semibold pt-2"><%= @location.region.name %></p>
+        <p class="text-lg text-gray-900 font-semibold pt-2"><%= @location.region.name %></p>
       </div>
       <div class="pr-4">
         <span class="uppercase">Tip</span>
-        <p class="text-2xl text-gray-900 font-semibold pt-2"><%= @location.type.name %></p>
+        <p class="text-lg text-gray-900 font-semibold pt-2"><%= @location.type.name %></p>
       </div>
       <div class="pr-4">
         <span class="uppercase">Kategorija</span>
-        <p class="text-2xl text-gray-900 font-semibold pt-2"><%= @location.category.name %></p>
+        <p class="text-lg text-gray-900 font-semibold pt-2"><%= @location.category.name %></p>
       </div>
     </div>
     <%= image_tag @location.master_image, class: "h-72 w-full rounded-lg shadow-md bg-cover mt-8 bg-center" %>

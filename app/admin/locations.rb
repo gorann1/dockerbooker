@@ -28,15 +28,18 @@ ActiveAdmin.register Location do
   end
 
 
-  permit_params :zone_id, :country_id, :region_id, :type_id, :category_id, :name, :lat, :lng, :gps, :mindepth, :maxdepth, :visibility, :currents, :is_spec, :master_image, :desc
+  permit_params :zone_id, :country_id, :region_id, :type_id, :category_id, :name, :lat, :lng, :gps, :city, :mindepth, :maxdepth, :visibility, :currents, :is_spec, :master_image, :desc
+
 
   form do |f| #This is formtastic form builder
-  f.semantic_errors # shows errors on :base
-  f.inputs          # builds an input field for every attribute
-  f.inputs do
-    f.input :master_image, as: :file
-    f.actions         # adds the 'Submit' and 'Cancel' buttons
+    f.semantic_errors # shows errors on :base
+    f.inputs          # builds an input field for every attribute
+    f.inputs do
+      f.input :master_image, as: :file
+      f.actions         # adds the 'Submit' and 'Cancel' buttons
+    end
   end
-  end
+
+
 
 end

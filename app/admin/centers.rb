@@ -26,9 +26,6 @@ ActiveAdmin.register Center do
     column :City do |center|
       truncate(center.city, length: 50)
     end
-    column :Email do |center|
-      truncate(center.city, length: 50)
-    end
     actions
   end
 

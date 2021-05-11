@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_08_110649) do
+ActiveRecord::Schema.define(version: 2021_05_11_171918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,15 @@ ActiveRecord::Schema.define(version: 2021_05_08_110649) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "assignments", force: :cascade do |t|
+    t.bigint "location_id", null: false
+    t.bigint "center_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["center_id"], name: "index_assignments_on_center_id"
+    t.index ["location_id"], name: "index_assignments_on_location_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "desc"
@@ -105,6 +114,15 @@ ActiveRecord::Schema.define(version: 2021_05_08_110649) do
     t.index ["country_id"], name: "index_centers_on_country_id"
     t.index ["region_id"], name: "index_centers_on_region_id"
     t.index ["zone_id"], name: "index_centers_on_zone_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.bigint "region_id", null: false
+    t.string "name"
+    t.text "desc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["region_id"], name: "index_cities_on_region_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -202,9 +220,12 @@ ActiveRecord::Schema.define(version: 2021_05_08_110649) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "assignments", "centers"
+  add_foreign_key "assignments", "locations"
   add_foreign_key "centers", "countries"
   add_foreign_key "centers", "regions"
   add_foreign_key "centers", "zones"
+  add_foreign_key "cities", "regions"
   add_foreign_key "countries", "zones"
   add_foreign_key "locations", "categories"
   add_foreign_key "locations", "countries"

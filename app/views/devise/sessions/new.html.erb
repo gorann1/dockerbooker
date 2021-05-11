@@ -1,26 +1,33 @@
-<h2>Log in</h2>
-
+<div class="flex flex-col justify-center sm:w-96 sm:m-auto mx-5 mb-5 space-y-8">
+<h1 class="font-bold text-center text-4xl text-green-200">SCUBA<span class="text-pink-400">booker</span></h1>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class="flex flex-col bg-white p-10 rounded-lg shadow space-y-6">
+    <h1 class="font-bold text-xl text-center">Sign in to your account</h1>
+    <div class="flex flex-col space-y-1">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", id:"email", class:"border-2 rounded px-3 py-2 w-full focus:outline-none focus:border-blue-400 focus:shadow", placeholder:"Email"%>
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="flex flex-col space-y-1">
+      <%= f.password_field :password, autocomplete: "current-password", id:"password", class:"border-2 rounded px-3 py-2 w-full focus:outline-none focus:border-blue-400 focus:shadow", placeholder:"Password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field relative">
+        <%= f.check_box :remember_me, id:"remember", class:"inline-block align-middle" %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="flex flex-col-reverse sm:flex-row sm:justify-between items-center">
+      <div class="actions">
+        <%= f.submit "Log in", class:"bg-blue-500 text-white font-bold px-5 py-2 rounded focus:outline-none shadow hover:bg-blue-700 transition-colors" %>
+      </div>
+    </div>
   </div>
-<% end %>
+  <%= render "devise/shared/links" %>
+<%end %>
 
-<%= render "devise/shared/links" %>
+<div class="flex justify-center text-gray-500 text-sm">
+  <p>&copy;2021. All right reserved.</p>
+</div>
+</div>
