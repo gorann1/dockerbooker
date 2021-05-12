@@ -117,8 +117,10 @@
       </div>
     </div>
     <%= image_tag @location.master_image, class: "h-72 w-full rounded-lg shadow-md bg-cover mt-8 bg-center object-cover" %>
-    <%= image_tag @location.master_image.variant(gravity: "Center", resize: "486x309^", crop: '412x309+0+0') %>
-    <div class="description w-full mt-8 text-gray-500 text-sm"><%= @location.desc %></div>
+     <div class="description w-full mt-8 text-gray-500 text-sm"><%= @location.desc %></div>
+    <% @location.centers.each do |cc| %>
+      <%= cc.name %> - <%= cc.id %>
+    <% end %>
       <%#= image_tag url_for(location), :class => "locations" %>
       <%#= image_tag @location.new_images, class: "h-72 w-full rounded-lg shadow-md bg-cover mt-8 bg-center" %>
 
