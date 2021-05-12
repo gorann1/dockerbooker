@@ -4,7 +4,7 @@ class CentersController < ApplicationController
     Center.order('id ASC').reorder('name DESC')
     #@centers = Center.paginate(page: params[:page])
     @q = Center.ransack(params[:q])
-    @centers = @q.result.paginate(page: params[:page], per_page: 3)
+    @centers = @q.result.paginate(page: params[:page], per_page: 12)
     @custom_renderer = Class.new(WillPaginate::ActionView::LinkRenderer) do
       def container_attributes
         { class:"flex h-8 font-medium"}
