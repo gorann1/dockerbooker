@@ -330,6 +330,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   devise
   gmaps4rails
+  image_processing
   jbuilder (~> 2.7)
   jquery-rails
   jquery-ui-rails

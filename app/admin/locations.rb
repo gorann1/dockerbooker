@@ -23,12 +23,14 @@ ActiveAdmin.register Location do
     column :Desc do |location|
       truncate(location.desc, length: 50)
     end
-
+    column :master_image do |location|
+      image_tag url_for(location.master_image.variant(resize_to_limit: [50,50]))
+    end
     actions
   end
 
 
-  permit_params :zone_id, :country_id, :region_id, :type_id, :category_id, :name, :lat, :lng, :gps, :city, :mindepth, :maxdepth, :visibility, :currents, :is_spec, :master_image, :desc
+  permit_params :zone_id, :country_id, :region_id, :type_id, :category_id, :name, :lat, :lng, :gps, :city, :mindepth, :maxdepth, :visibility, :currents, :is_spec, :master_image, :new_images, :desc
 
 
   form do |f| #This is formtastic form builder
@@ -38,6 +40,16 @@ ActiveAdmin.register Location do
       f.input :master_image, as: :file
       f.actions         # adds the 'Submit' and 'Cancel' buttons
     end
+  f.input :new_images, as: :file, input_html: { multiple: true }
+
+
+  controller do
+    after_save :add_images
+
+    def add_images(post)
+      post.attach_images
+    end
+  end
   end
 
 

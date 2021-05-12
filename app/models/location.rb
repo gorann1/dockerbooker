@@ -7,8 +7,10 @@ class Location < ApplicationRecord
   belongs_to :type
   belongs_to :category
   has_one_attached :master_image
+  has_many_attached :new_images
   has_many :assignments
   has_many :centers, :through => :assignments
+
 
   #mount_uploader :image, ImageUploader
 end

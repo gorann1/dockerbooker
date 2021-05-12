@@ -4,7 +4,7 @@
 <div class="pt-2 relative mx-auto text-gray-600">
   <%= search_form_for @q do |f| %>
   <%= f.search_field :name_or_desc_cont, class:"border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm", focus:"outline-none",
-         type:"search", placeholder:"Search" %>
+         type:"search", placeholder:"Pretraži po nazivu ili pojmu" %>
   <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
     <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
          xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
@@ -17,9 +17,9 @@
 </div>
 <div class="container px-6 py-10 mx-auto">
   <div class="grid gap-8 mt-6 sm:grid-cols-2 md:grid-cols-4">
-    <%= f.collection_select :zone_id_eq, Zone.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", include_blank: true %>
-    <%= f.collection_select :country_id_eq, Country.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", include_blank: true %>
-    <%= f.collection_select :type_id_eq, Type.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", include_blank: true %>
+    <%= f.collection_select :zone_id_eq, Zone.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", :prompt => 'Zona' %>
+    <%= f.collection_select :country_id_eq, Country.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", :prompt => 'Zemlja' %>
+    <%= f.collection_select :type_id_eq, Type.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", :prompt => 'Tip' %>
     <button
       class="px-4 py-2 font-medium tracking-wide text-white capitalize bg-blue-600 rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
       Search
