@@ -16,9 +16,10 @@
   </button>
 </div>
 <div class="container px-6 py-10 mx-auto">
-  <div class="grid gap-8 mt-6 sm:grid-cols-2 md:grid-cols-4">
+  <div class="grid gap-4 mt-6 sm:grid-cols-2 md:grid-cols-5">
     <%= f.collection_select :zone_id_eq, Zone.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", :prompt => 'Zona' %>
     <%= f.collection_select :country_id_eq, Country.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", :prompt => 'Zemlja' %>
+    <%= f.collection_select :region_id_eq, Region.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", :prompt => 'Regija' %>
     <%= f.collection_select :type_id_eq, Type.all, :id, :name, class:"border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50", :prompt => 'Tip' %>
     <button
       class="px-4 py-2 font-medium tracking-wide text-white capitalize bg-blue-600 rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
