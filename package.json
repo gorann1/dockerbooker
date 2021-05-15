@@ -19,7 +19,8 @@
     "react-router-dom": "^5.2.0",
     "stimulus": "2.0.0",
     "tailwindcss": "2.0.3",
-    "tailwindcss-stimulus-components": "2.1.2"
+    "tailwindcss-stimulus-components": "2.1.2",
+    "toastr": "^2.1.4"
   },
   "version": "0.1.0",
   "devDependencies": {

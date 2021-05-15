@@ -14,6 +14,8 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
+    @location.photos.attach(params[:photos])
+    Location.all.with_attached_photos
     @hash = Gmaps4rails.build_markers(@location) do |location, marker|
       marker.lat location.lat
       marker.lng location.lng

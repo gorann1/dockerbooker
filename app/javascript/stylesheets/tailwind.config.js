@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+//const colors = require('tailwindcss/colors')
 
 module.exports = {
   purge: {
@@ -10,14 +10,20 @@ module.exports = {
     ],
     theme: {
       colors: {
-        black: colors.black,
-        white: colors.white,
-        gray: colors.trueGray,
-        indigo: colors.indigo,
-        red: colors.rose,
-        yellow: colors.amber,
+        pink: '#ee2a7b',
       },
-      extend: {},
+      extend: {
+        colors: {
+          blue: {
+            '100': '#f5f5f5',
+            '200': '#eeeeee',
+            '300': '#e0e0e0',
+            '400': '#bdbdbd',
+            '500': '#04416f',
+            '900': '#262262',
+            },
+          }
+        },
     },
     variants: {
       extend: {

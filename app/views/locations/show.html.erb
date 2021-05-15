@@ -50,8 +50,19 @@
     <%= image_tag @location.master_image, class: "h-72 w-full rounded-lg shadow-md bg-cover mt-8 bg-center object-cover" %>
      <div class="description w-full mt-8 text-gray-500 text-sm"><%= @location.desc %></div>
     <% @location.centers.each do |cc| %>
-      <%= cc.name %>
+      <%= link_to cc do %>
+        <%= cc.name %>
+      <% end %>
     <% end %>
+<!--
+    <%# if @location.photos.attached? %>
+      <%# @location.photos.each do |ph| %>
+        <%#= f.hidden_field :photos, multiple: true, value: ph.signed_id %>
+      <%# end %>
+    <%# end %>
+-->
+
+
       <%#= image_tag url_for(location), :class => "locations" %>
       <%#= image_tag @location.new_images, class: "h-72 w-full rounded-lg shadow-md bg-cover mt-8 bg-center" %>
 

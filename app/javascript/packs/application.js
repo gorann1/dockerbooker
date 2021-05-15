@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 //= require underscore
 //= require gmaps/google
+//= require toastr
 //= require_tree .
 
 import JQuery from 'jquery'
@@ -13,11 +14,15 @@ import "@hotwired/turbo-rails"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import 'toastr';
+import 'toastr/build/toastr.min';
 import "stylesheets/tailwind/before.scss"
 import "stylesheets/application.scss"
 import "stylesheets/tailwind/after.scss"
 import "@fortawesome/fontawesome-free/css/all"
 
+import toastr from 'toastr'
+window.toastr = toastr
 Rails.start()
 ActiveStorage.start()
 // Support component names relative to this directory:

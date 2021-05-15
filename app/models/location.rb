@@ -7,10 +7,15 @@ class Location < ApplicationRecord
   belongs_to :type
   belongs_to :category
   has_one_attached :master_image
-  has_many_attached :new_images
+  has_many_attached :photos
   has_many :assignments
   has_many :centers, :through => :assignments
+=begin
 
+  validates :photos, attached: true, content_type: [:png, :jpg, :jpeg]
+  validates :photos, attached: true,
+            content_type: ['image/png', 'image/jpg']
+=end
 
   #mount_uploader :image, ImageUploader
 end

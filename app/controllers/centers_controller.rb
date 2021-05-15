@@ -19,4 +19,10 @@ class CentersController < ApplicationController
     end
 
   end
+
+      def show
+        @center = Center.find(params[:id])
+      end
+
+
 end

@@ -1,6 +1,5 @@
 module ApplicationHelper
 
-
   def link_to_add_fields(name, f, type)
     new_object = f.object.send "build_#{type}"
     id = "new_#{type}"
@@ -10,5 +9,14 @@ module ApplicationHelper
     link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
   end
 
+
+  def avatar_url(user)
+    gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+    if user.image
+      user.image
+    else
+      "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
+    end
+  end
 
 end

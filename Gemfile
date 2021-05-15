@@ -27,7 +27,7 @@ gem 'sidekiq', '~> 6.1.2'
 gem 'devise'
 gem 'activeadmin'
 gem 'carrierwave', '~> 2.0'
-gem 'mini_magick', '~> 4.11'
+gem 'mini_magick', '>= 4.9.5'
 gem 'ransack', '~> 2.4', '>= 2.4.2'
 gem 'react_on_rails', '11.2.1'
 gem 'active_material'
@@ -36,6 +36,9 @@ gem 'will_paginate', '~> 3.3.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'image_processing'
+gem 'gravtastic'
+gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
+gem 'active_storage_validations'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

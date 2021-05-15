@@ -30,7 +30,13 @@ ActiveAdmin.register Center do
   end
 
 
-  permit_params :zone_id, :country_id, :region_id, :name, :address, :add_address, :city, :contact, :phone, :add_phone, :postalcode, :mobile, :add_mobile, :email, :add_email, :web, :add_web, :desc
+  permit_params :zone_id, :country_id, :region_id, :name, :address, :add_address, :city, :contact, :phone, :add_phone, :postalcode, :mobile, :add_mobile, :new_images, :email, :add_email, :web, :add_web, :desc
 
+  form do |f| #This is formtastic form builder
+  f.semantic_errors # shows errors on :base
+  f.inputs          # builds an input field for every attribute
+    f.input :new_images, as: :file, input_html: { multiple: true }
+  f.actions         # adds the 'Submit' and 'Cancel' buttons
+  end
 
 end
