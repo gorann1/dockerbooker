@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get 'locations', to: 'locations#index'
   get '/locations/:id', to: 'locations#show'
 
+  resources :locations do
+    resources :reviews, only: [:create, :destroy]
+  end
+
+
   get '/search', to: 'locations#search'
 
   resources :centers

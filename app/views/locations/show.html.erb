@@ -54,6 +54,14 @@
         <%= cc.name %>
       <% end %>
     <% end %>
+    <h3>Dojmovi <%= @location.average_rating %>(<%=@reviews.count %>)</h3>
+    <div class="flex">
+      <%= render 'reviews/form' %>
+
+    </div>
+    <div class="flex">
+      <%= render 'reviews/list' %>
+    </div>
 <!--
     <%# if @location.photos.attached? %>
       <%# @location.photos.each do |ph| %>

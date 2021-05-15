@@ -6,6 +6,8 @@
 //= require gmaps/google
 //= require toastr
 //= require_tree .
+//= require jquery.raty
+//= require ratyrate
 
 import JQuery from 'jquery'
 window.$ = window.JQuery = JQuery

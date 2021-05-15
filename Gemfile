@@ -39,6 +39,7 @@ gem 'image_processing'
 gem 'gravtastic'
 gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
 gem 'active_storage_validations'
+gem 'ratyrate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

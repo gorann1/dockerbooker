@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_11_171918) do
+ActiveRecord::Schema.define(version: 2021_05_15_060440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -175,6 +175,17 @@ ActiveRecord::Schema.define(version: 2021_05_11_171918) do
     t.index ["zone_id"], name: "index_regions_on_zone_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.integer "star"
+    t.bigint "location_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["location_id"], name: "index_reviews_on_location_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "searches", force: :cascade do |t|
     t.string "zone"
     t.string "country"
@@ -234,4 +245,6 @@ ActiveRecord::Schema.define(version: 2021_05_11_171918) do
   add_foreign_key "locations", "zones"
   add_foreign_key "regions", "countries"
   add_foreign_key "regions", "zones"
+  add_foreign_key "reviews", "locations"
+  add_foreign_key "reviews", "users"
 end

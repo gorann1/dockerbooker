@@ -19,7 +19,9 @@ class LocationsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@location) do |location, marker|
       marker.lat location.lat
       marker.lng location.lng
-      end
+    end
+    @reviews = @location.reviews.order("created_at DESC")
+    @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
   end
 
     def search

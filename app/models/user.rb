@@ -6,6 +6,8 @@ class User < ApplicationRecord
   gravtastic :email
 =end
 
+  has_many :reviews
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
 
