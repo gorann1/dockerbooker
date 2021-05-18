@@ -37,7 +37,7 @@ ActiveAdmin.register Location do
     f.semantic_errors # shows errors on :base
     f.inputs          # builds an input field for every attribute
     f.inputs do
-      f.input :image, as: :file
+      f.input :master_image, as: :file
       f.input :photos, as: :file, input_html: { multiple: true }
      end
       f.actions         # adds the 'Submit' and 'Cancel' buttons

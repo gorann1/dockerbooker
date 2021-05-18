@@ -4,9 +4,9 @@ class Center < ApplicationRecord
   belongs_to :region
   has_many :assignments
   has_many :locations, :through => :assignments
-  has_many_attached :images
-  validates :images, presence: true, blob: { content_type: ['image/jpg', 'image/jpeg', 'image/png'], size_range: 1..3.megabytes }
-  validates :title, presence: true
+  #has_many_attached :images
+  #validates :images, presence: true, blob: { content_type: ['image/jpg', 'image/jpeg', 'image/png'], size_range: 1..3.megabytes }
+  #validates :title, presence: true
 
 =begin
   attr_accessor :new_images
