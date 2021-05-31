@@ -38,7 +38,7 @@
 <!--            </div>-->
             <p class="text-green-200"><%=center.city %></p>
             <p class="text-pink-400"><%=center.address %></p>
-          <% if center.locations %>
+          <% if center.locations present? %>
         <h4>Lokacije</h4>
             <% center.locations.each do |cc| %>
               <%= link_to cc do %>
