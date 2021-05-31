@@ -38,9 +38,10 @@
 <!--            </div>-->
             <p class="text-green-200"><%=center.city %></p>
             <p class="text-pink-400"><%=center.address %></p>
+            <h4>Lokacije</h4>
             <% center.locations.each do |cc| %>
               <%= link_to cc do %>
-                Lokacije: <%= cc.name %><br/>
+                <%= cc.name %><br/>
               <% end %>
             <% end %>
 
