@@ -38,14 +38,13 @@
 <!--            </div>-->
             <p class="text-green-200"><%=center.city %></p>
             <p class="text-pink-400"><%=center.address %></p>
-          <% if center.locations present? do %>
+          <% if center.locations %>
         <h4>Lokacije</h4>
             <% center.locations.each do |cc| %>
               <%= link_to cc do %>
                 <%= cc.name %><br/>
               <% end %>
             <% end %>
-            <%end %>
             <%end %>
 
 <!--            <div class="text-center mt-2 leading-none flex justify-between w-full">
